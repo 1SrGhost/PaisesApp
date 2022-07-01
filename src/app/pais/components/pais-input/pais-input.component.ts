@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { debounce, debounceTime, Subject } from 'rxjs';
 
 @Component({
@@ -15,6 +15,10 @@ export class PaisInputComponent implements OnInit{
  //se crea el evento
   @Output() onEnter: EventEmitter<string> = new EventEmitter();
    @Output() onDebounce: EventEmitter<string> = new EventEmitter();
+
+  //se crea el input para recibir el string placeholder que sera enviado de tipo string 
+ /* Crear una entrada para recibir el marcador de posición de cadena que se enviará de tipo cadena */
+   @Input() placeholder: string =   "";
    //se crea el debounce para que ejecute sugerencias cuando se deja de escribir
    debouncer: Subject<string> = new Subject();
 

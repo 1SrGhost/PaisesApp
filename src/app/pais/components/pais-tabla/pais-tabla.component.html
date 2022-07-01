@@ -16,7 +16,7 @@
                 [src] = "pais.flags.png"
                 class="small-flag"  
             ></td> 
-           <td>{{pais.name.common}}</td> 
+           <td>{{pais.capital}},{{pais.name.common}}</td> 
            <td>{{pais.population | number}}</td> 
            <td><a [routerLink]="['/pais',pais.alpha2Code]">ver...</a></td> 
         </tr>
