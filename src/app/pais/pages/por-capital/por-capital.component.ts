@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Country } from '../../interfaces/pais.interface';
-import { CapitalService } from '../../services/capital.service';
+
+import { PaisService } from '../../services/pais.service';
 
 @Component({
   selector: 'app-por-capital',
@@ -13,13 +14,13 @@ export class PorCapitalComponent  {
   hayError: boolean = false;
   capitales : Country[] = [];
 
-  constructor(private CapitalService: CapitalService) { }
+  constructor(private PaisService: PaisService) { }
 
   buscar( termino:string){
     this.hayError = false;
     console.log(this.termino);
 
-    this.CapitalService.buscarCapital(termino)
+    this.PaisService.buscarCapital(termino)
     .subscribe( (capitales) => {
       console.log(capitales);
       this.capitales = capitales;
