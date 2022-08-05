@@ -1,3 +1,4 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Country } from '../../interfaces/pais.interface';
 
@@ -18,6 +19,7 @@ export class PorCapitalComponent  {
 
   buscar( termino:string){
     this.hayError = false;
+    this.termino = termino;  
     console.log(this.termino);
 
     this.PaisService.buscarCapital(termino)

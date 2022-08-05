@@ -17,7 +17,9 @@ export class PorRegionComponent {
   constructor(private PaisService:PaisService) { }
 
   getClaseCss(region: string): string { 
-    return(region == this.regionActiva) ? 'btn btn-primary' : 'btn btn-outline-primary'
+    return(region == this.regionActiva)
+     ? 'btn btn-primary' 
+     :'btn btn-outline-primary';
   
   }
   activarRegion(region: string) {
